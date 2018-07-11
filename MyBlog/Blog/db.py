@@ -32,7 +32,7 @@ def close_db(e=None):
 
 def init_db():
     db = get_db()
-    with current_app.open_resource('MySql/insert_article.sql') as f:
+    with current_app.open_resource('Blog/MySql/insert_article.sql') as f:
         sql = f.read().decode('utf8')
         sql_list = sql.split(';')
         del sql_list[len(sql_list) - 1 ]
