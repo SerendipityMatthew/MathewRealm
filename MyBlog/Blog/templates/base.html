@@ -1,27 +1,30 @@
 <!doctype html>
+<html>
 <title> {% block title %} {% endblock %} - Mathew's Blog</title>
 <link rel='stylesheet' href="{{ url_for('static', filename='style.css')}}">
 <nav>
     <h1>Mathew's Blog</h1>
-    <ul>
-        {% if g.user%}
-        <li>
-            <span> {{g.user[ 'username'] }}</span>
-        </li>
-        <li>
-            <a href="{{ url_for('auth.logout') }}"> Log Out</a>
-        </li>
+    <div>
+        <ul>
+            {% if g.user%}
+            <li>
+                <span> {{g.user['username'] }}</span>
+            </li>
+            <li>
+                <a href="{{ url_for('auth.logout') }}"> Log Out</a>
+            </li>
 
-        {% else %}
-        <li>
-            <a href="{{ url_for('auth.register') }}"> Register </a>
-        </li>
-        <li>
-            <a href="{{ url_for('auth.login') }}">Log In</a>
-        </li>
+            {% else %}
+            <li>
+                <a href="{{ url_for('auth.register') }}"> Register </a>
+            </li>
+            <li>
+                <a href="{{ url_for('auth.login') }}">Log In</a>
+            </li>
 
-        {% endif %}
-    </ul>
+            {% endif %}
+        </ul>
+    </div>
 </nav>
 
 <section class="content">
@@ -31,3 +34,19 @@
     </header>
     {% endfor %} {% block content %} {% endblock %}
 </section>
+
+<body>
+    <style type="text/css">
+        li {
+            font-size: 20px;
+            font-family: sans-serif;
+        }
+        div {
+            margin-top: 20px;
+            padding-bottom: 10px;
+            
+        }
+    </style>
+</body>
+
+</html>
