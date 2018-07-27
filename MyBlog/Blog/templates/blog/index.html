@@ -1,4 +1,6 @@
-<!DOCTYPE HTML> {% extends "base.html" %} {% block header %}
+<!DOCTYPE HTML> 
+{% extends "base.html" %} 
+{% block header %}
 <h1> {% block title %} Posts {% endblock %}</h1>
 {% if g.user %} {% endif %} {% endblock %}{% block content %} {% for post in posts %}
 <article class="post">

@@ -77,18 +77,21 @@ def login():
         if error is None:
             session.clear()
             session['user_id'] = result[0]
-            return redirect(url_for('auth.index'))
+            return redirect(url_for('index'))    # always wrong, I don't know the reason.
         flash(error)
     return render_template('auth/login.html')
 
-@bp.route('/index')
-def index():
-    return redirect(url_for('index'))
 
 @bp.route('/logout')
 def logout():
     session.clear()
     return redirect(url_for('index'))
+
+
+@bp.route('/')
+def index():
+    db = get_db()
+    return render_template('blog/index.html')
 
 
 def login_required(view):
