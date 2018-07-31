@@ -18,3 +18,6 @@ def create():
     if request.method == 'POST':
         title = request.form['title']
         body = request.fom['body']
+        error = None
+        if not title:
+            error = 'Title is req'

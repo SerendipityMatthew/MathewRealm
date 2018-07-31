@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <div id="navbar_category">
+            <ul>
+                <li><a href="/"> Home </a> </li>
+                <li> Archive </li>
+                <li> Tags </li>
+                <li> Time Line </li>
+                <li> My Space </li>
+                <li> English </li>
+                <li> Book </li>
+            </ul>
+
+        </div>
+    </nav>
+    
+    <div class="post-preview">
+        <a target="_blank" href="">
+            <h2 class="post-title"></h2>
+            
+            <div class="post-content-preview">
+                {{ article }}
+            </div>
+        </a>
+        <p class="post-meta">
+                Posted By author, date, modified date, 
+        </p>
+
+    </div>
+
+</body>
+
+</html>
